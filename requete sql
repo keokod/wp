@@ -1,0 +1,9 @@
+la liste des articles par catégorie
+
+SELECT P.post_title,T.name 
+FROM wp_posts P  
+INNER JOIN wp_term_relationships R 
+ON P.ID = R.term_taxonomy_id 
+INNER JOIN wp_terms T 
+ON R.term_taxonomy_id = T.term_id 
+WHERE T.term_id=5;
